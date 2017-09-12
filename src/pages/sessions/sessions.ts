@@ -11,4 +11,8 @@ export class SessionsPage {
 
   }
 
+  addSet() {
+    console.log("test");
+  }
+
 }
