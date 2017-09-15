@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
+import { SetModal } from './set/set';
 
 @Component({
   selector: 'page-sessions',
@@ -7,12 +8,13 @@ import { NavController } from 'ionic-angular';
 })
 export class SessionsPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
 
   }
 
   addSet() {
-    console.log("test");
+    let setModal = this.modalCtrl.create(SetModal, { userId: 8675309 });
+    setModal.present();
   }
 
 }

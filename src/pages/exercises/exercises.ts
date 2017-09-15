@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { PersistencyService } from '../../services/persitence.service';
 
 @Component({
   selector: 'page-exercises',
@@ -7,8 +8,10 @@ import { NavController } from 'ionic-angular';
 })
 export class ExercisesPage {
 
-  constructor(public navCtrl: NavController) {
+  items = [];
 
+  constructor(public navCtrl: NavController, public storage: PersistencyService) {
+    // this.items = storage.ExerciseListing();
   }
 
 }

@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SQLite } from '@ionic-native/sqlite';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -10,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SetModal } from '../pages/sessions/set/set';
+import { PersistencyService } from '../services/persitence.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ExercisesPage,
     SessionsPage,
-    TabsPage
+    TabsPage,
+    SetModal
   ],
   imports: [
     BrowserModule,
@@ -29,11 +33,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ExercisesPage,
     SessionsPage,
-    TabsPage
+    TabsPage,
+    SetModal
   ],
   providers: [
+    SQLite,
     StatusBar,
     SplashScreen,
+    PersistencyService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
